@@ -299,7 +299,222 @@ gets *less* useful per note as it grows.
 
 ---
 
-## 15. When not to use it
+## 15. Use cases
+
+The same machine, pointed at different things. What changes is what accumulates.
+
+### Tracking a beat you cover
+
+**Feed it:** launch coverage, spec sheets, earnings notes, competitor reviews, your own
+takes after hands-on time.
+
+**Grows into:**
+```
+entities/apple.md              what they've said and shipped, dated
+entities/vision-pro.md         specs, price moves, reception over time
+concepts/spatial-computing.md  the category argument, contested
+syntheses/is-the-category-real.md
+questions/what-would-prove-adoption.md
+```
+
+**The payoff question:** *"How has the pitch for this category changed over eighteen
+months, and who moved first?"* — answerable from pages that recorded each shift as it
+happened, instead of from memory.
+
+### Competitive and SEO intelligence
+
+**Feed it:** competitor teardowns, SERP screenshots, algorithm update coverage, your own
+performance exports, industry post-mortems.
+
+**Grows into:**
+```
+entities/<competitor>.md       their formats, cadence, what they rank for
+concepts/ai-overviews.md       the mechanism, drawn from many sources
+concepts/zero-click-search.md
+syntheses/what-actually-drives-our-traffic.md    ← revised as evidence lands
+questions/does-format-x-still-work.md
+```
+
+**The payoff question:** *"Where do these sources disagree about what's actually causing
+the traffic decline?"* — the contradictions were flagged at ingest, so the disagreement is
+already documented rather than something you have to reconstruct.
+
+### A deep dive
+
+One subject that will absorb many sources over weeks. Gets its own domain, `dd-<topic>`.
+
+**Feed it:** papers, reports, long interviews, primary documents.
+
+**Grows into:** a standing thesis page that gets revised as evidence accumulates, with
+`## What would change this view` kept honest. Every claim traceable to the source it came
+from.
+
+**The payoff question:** *"What's the strongest argument against my current position?"*
+— the counter-evidence section exists because it was written while the evidence was fresh.
+
+### Personal
+
+**Feed it:** articles on sleep, focus, training; podcast notes; protocols you've tried;
+your own journal entries about what worked.
+
+**Grows into:**
+```
+concepts/sleep-debt.md         the mechanism, from several sources
+entities/<protocol>.md         what it claims, what you observed
+syntheses/what-actually-works-for-me.md
+questions/is-the-morning-routine-doing-anything.md
+```
+
+**The payoff:** your own notes become citable evidence alongside published research, and
+the wiki can tell you where a popular claim rests on one thin study.
+
+**Note:** `personal` pages go to the private GitHub repo along with everything else. That
+was decided; individual sources can still be excluded on request.
+
+### A client or project
+
+**Feed it:** briefs, call notes, decisions and why they were made, SOPs, constraints.
+
+**Grows into:** an institutional memory that survives context-switching. Six weeks later,
+*"why did we rule out that approach?"* has an answer with a date on it.
+
+### Reading a book
+
+**Feed it:** your notes chapter by chapter as you go.
+
+**Grows into:** a companion wiki — characters, themes, threads, and how they connect —
+built while you read rather than reconstructed after.
+
+---
+
+## 16. Worked examples
+
+### What a page actually looks like
+
+Real page from your wiki, `concepts/retrieval-augmented-generation.md`:
+
+```markdown
+---
+type: concept
+domains: [system]
+title: Retrieval-Augmented Generation (RAG)
+created: 2026-08-18
+updated: 2026-08-18
+status: seed
+confidence: medium
+aliases: ["RAG"]
+tags: [thin-sourcing, needs-verification]
+sources: ["[[llm-wiki-pattern]]"]
+---
+```
+
+Read that frontmatter as a trust signal before you read a word of the body:
+`confidence: medium`, `thin-sourcing`, and exactly one entry in `sources`. The page even
+says so out loud:
+
+> **Scope note:** this page currently reflects a single source — [[llm-wiki-pattern]] —
+> which describes RAG specifically as a **foil** for its own proposal. It is a fair but
+> deliberately unflattering characterization.
+
+That's the discipline that keeps a fluent agent from laundering a one-sided claim into
+something that reads like settled fact.
+
+### An ingest, verbatim
+
+**You:** *(drop a competitor teardown in `raw/inbox/`)* ingest this
+
+**Claude:**
+> **Domains: `[seo, tech]`** — mainly an SEO teardown, but half of it is about how the
+> product itself changed, which is why `tech` is on there too.
+>
+> **What matters in it:**
+> 1. They moved from long-form guides to short comparison pages in Q2 — the traffic chart
+>    on page 3 shows the inflection.
+> 2. Claims a 40% lift, but the window includes a known algorithm update, so attribution
+>    is unclear.
+> 3. Their internal linking pattern changed at the same time.
+>
+> **Touches:** `entities/<competitor>` (new), `concepts/comparison-pages` (new),
+> `syntheses/what-actually-drives-our-traffic` (update — this is evidence *against* the
+> current position).
+>
+> **Contradiction:** source #4 argued comparison pages were losing ground. Both can't be
+> right; the difference may be vertical. I'd flag it on both pages rather than pick a
+> winner.
+>
+> Want me to write it up, or emphasize something else?
+
+**You:** write it, but don't take the 40% at face value
+
+**Claude:** *(writes 6 pages, tags the claim `needs-verification`, records the
+contradiction on both sides, updates the index and log, reports every file touched)*
+
+The stop at "want me to write it up" is the whole point. That's where you inject what you
+know and the wiki stops being a generic summary.
+
+### A query, verbatim
+
+**You:** what do we know about how AI search affects publisher traffic?
+
+**Claude:**
+> Three pages carry this. The short version, then the caveats:
+>
+> [[ai-overviews]] holds the mechanism — click-through falls hardest on informational
+> queries, per sources #2 and #7. [[zero-click-search]] is where the numbers live, though
+> the two sources there disagree by a wide margin and both are vendor-published.
+>
+> [[what-actually-drives-our-traffic]] currently argues the effect is concentrated in
+> top-of-funnel content, and explicitly says what would change that view: any evidence of
+> decline in comparison or review pages.
+>
+> **Where the wiki is silent:** nothing here from a primary source — no first-party
+> analytics, no Google statement. Everything is secondhand reporting. That's worth fixing
+> before you make a call on it.
+
+Two things it did that a chatbot wouldn't: it cited specific pages you can open, and it
+told you where the knowledge is thin rather than filling the gap.
+
+### A lint report, verbatim
+
+**You:** lint the wiki
+
+**Claude:**
+> **Contradictions (2)** — [[comparison-pages]] and [[content-depth]] make opposing
+> claims about optimal length; neither page acknowledges the other. Proposed fix: record
+> the conflict on both, tag `contradiction`, find a tiebreaker.
+>
+> **Stale (1)** — [[algorithm-updates]] hasn't been revised since March, and two sources
+> since then bear on it. Tagged `stale-risk`.
+>
+> **Orphans (1)** — [[keyword-cannibalization]] has no inbound links. Either it belongs
+> under [[what-actually-drives-our-traffic]] or it was created prematurely.
+>
+> **Gaps** — the wiki almost answers "does content freshness affect rankings" but has no
+> primary source. Specific suggestion: find first-party data or a controlled study.
+>
+> Apply the fixes?
+
+Lint is where the wiki starts directing your reading instead of just absorbing it.
+
+### What a contradiction looks like on the page
+
+Not a deletion — a supersession, dated, with both sides named:
+
+```markdown
+## Contradictions & tensions
+
+**Extended by [[how-to-build-a-second-brain-with-claude]] (2026-06-12)** on three points:
+it supplied the missing attribution; it splits intake into `raw/` + `clippings/` where
+this document keeps one `raw/`; and it adds a fourth operation this document does not
+describe.
+```
+
+Nothing is overwritten. The older claim stays, the newer one is recorded next to it, and
+the date says which is which. That is the property no query-time system can give you.
+
+---
+
+## 17. When not to use it
 
 - One-off lookups you'll never revisit — just ask, don't ingest
 - Breaking news with no lasting relevance
@@ -310,7 +525,7 @@ Ingest costs real minutes. Not everything deserves filing.
 
 ---
 
-## 16. How this fails
+## 18. How this fails
 
 **Scattering.** Five sources across five unrelated topics produces a nice-looking folder
 that does nothing. Compounding needs density — sources that touch each other. Fifteen
@@ -330,7 +545,7 @@ say so and it gets removed.
 
 ---
 
-## 17. Getting to critical mass
+## 19. Getting to critical mass
 
 Pick **one** domain and go deep. Not two.
 
@@ -345,7 +560,7 @@ Pick **one** domain and go deep. Not two.
 
 ---
 
-## 18. Open bets
+## 20. Open bets
 
 Three things being tracked, each a page tagged `watching`:
 
@@ -362,7 +577,7 @@ degrades as the wiki grows, this reverts to an ordinary abandoned wiki.
 
 ---
 
-## 19. Quick reference
+## 21. Quick reference
 
 ```
 Drop a file        raw/inbox/  →  say "ingest this"

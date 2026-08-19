@@ -150,3 +150,12 @@ inside it keeps `Second Brain`.
 Updated `README.md` and `MANUAL.md` path references, and re-ran `setup.sh` to regenerate
 `~/.claude/CLAUDE.md` with the new path (old one backed up). Git remote unaffected.
 Obsidian saved vault entry points at the old path and must be re-selected once.
+
+## [2026-08-18] refactor | Manual expanded with use cases and examples
+
+Added two sections to `MANUAL.md`: §15 Use cases (tracking a beat, competitive/SEO
+intelligence, deep dives, personal, client projects, reading a book -- each showing the
+page structure that emerges and the question it makes cheap) and §16 Worked examples
+(anatomy of a real page read as a trust signal, plus verbatim ingest, query, and lint
+exchanges, and what a recorded contradiction looks like). Renumbered 17-21. Artifact
+regenerated.
