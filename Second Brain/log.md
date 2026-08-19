@@ -159,3 +159,16 @@ page structure that emerges and the question it makes cheap) and §16 Worked exa
 (anatomy of a real page read as a trust signal, plus verbatim ingest, query, and lint
 exchanges, and what a recorded contradiction looks like). Renumbered 17-21. Artifact
 regenerated.
+
+## [2026-08-18] refactor | Manual: added §17 Leverage
+
+Human pointed out that use cases and examples describe what the wiki becomes and what it
+looks like, but not how to extract value from it. Correct -- both sections documented the
+system, not the practice.
+
+Added §17 Leverage, about the human's moves rather than the system's structure: question
+types that require ingest-time structure and cannot be reconstructed on demand (vs. recall
+questions any chatbot answers better); feeding adversarially, including dropping your own
+position in as a citable source; turning wiki output into work product with its citation
+trail intact; letting lint direct what you read next; filing query answers back; a cadence;
+and an honest test at 20 sources. Renumbered 18-22.

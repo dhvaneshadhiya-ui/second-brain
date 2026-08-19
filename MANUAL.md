@@ -514,7 +514,115 @@ the date says which is which. That is the property no query-time system can give
 
 ---
 
-## 17. When not to use it
+## 17. Leverage — how to actually get value out of it
+
+Sections 15 and 16 describe what the wiki *becomes* and what it *looks like*. This one is
+about what **you** do. The system compounds on its own; leverage does not. These are the
+moves that separate a wiki you consult from one that changes your work.
+
+### 17.1 Ask questions only a wiki can answer
+
+Most people query a knowledge base the way they query a chatbot — *"summarize X"* — and
+get something a chatbot would have done better. The high-leverage questions are the ones
+that require **structure that was built at ingest time** and cannot be reconstructed on
+demand.
+
+| Ask this | Works because | Don't bother asking |
+|---|---|---|
+| "Where do my sources disagree about X?" | Contradictions were recorded on both pages while the agent had both in view | "Summarize what I've read" |
+| "What would change my mind about X?" | Synthesis pages carry an explicit *what would change this view* section | "What do you think about X" |
+| "What don't I know that I'd need, to decide X?" | Gaps and `questions/` are tracked as first-class pages | "Tell me about X" |
+| "What did I believe about X in March, and what changed it?" | Every page has `updated`, and git holds every version | — |
+| "What connects X and Y?" | The link graph spans domains; nothing else in your life does | — |
+| "What's the weakest claim on this page?" | `confidence`, `thin-sourcing`, and `sources` make weakness machine-visible | — |
+| "Which of my open questions could this new source close?" | `questions/` persists between sessions | — |
+
+The pattern: **ask for judgement, disagreement, and absence** — not for recall. Recall is
+the cheap part.
+
+### 17.2 Feed it adversarially
+
+What you feed determines what it can do. Three habits worth more than volume:
+
+**Feed the source that disagrees with you.** A wiki of things you already believe is an
+echo chamber with citations. The contradiction machinery only fires if there's something
+to contradict.
+
+**Feed your own position as a source.** Write down what you currently think — a rough
+note, five minutes — and drop it in `raw/inbox/`. It becomes citable, and every later
+source gets checked against it. This is the single highest-leverage thing most people
+never do, because it feels like writing a note rather than building an asset.
+
+**Feed primary over secondary.** A vendor's report beats three articles about the
+vendor's report. Tag discipline (`primary` / `secondary` / `promotional`) only helps if
+primaries are actually in there.
+
+### 17.3 Turn it into work product
+
+**The wiki is an input to work, not the work.** This is where the time comes back:
+
+- *"Draft an article outline from what we know about X. Mark every section where we're
+  relying on one source."* — you get the outline and the fact-check list together.
+- *"What's the contrarian angle our sources actually support?"* — grounded in evidence
+  rather than a hot take, with citations you can defend.
+- *"Build a comparison table of these competitors from the entity pages."* — the entity
+  pages already hold dated, sourced claims.
+- *"Write the case against doing X, using only what's in the wiki."* — the counter-evidence
+  sections make this fast and honest.
+- *"What have we published that these sources now contradict?"* — the highest-value query
+  a publication can run, and near-impossible without recorded contradictions.
+
+Every one of these arrives with a citation trail. That's the difference between output you
+can stand behind and output you have to re-verify.
+
+### 17.4 Let it direct your reading
+
+This is the inversion that most people miss. Normally you find sources, then read them.
+Here:
+
+```
+lint  →  "the wiki almost answers X but has no primary source"
+      →  you go find that specific source
+      →  ingest
+      →  lint again
+```
+
+The wiki tells you **what to read next**, and it's a better answer than your own reading
+list, because it knows exactly where its own knowledge is thin. Run lint when you're not
+sure what to work on.
+
+### 17.5 File answers back
+
+When a query produces something good, say **"file that."** It becomes a `syntheses/` or
+`questions/` page and compounds like any source.
+
+If you skip this, you re-derive the same analysis three months later and never notice you
+already did it. Chat history is not a knowledge base.
+
+### 17.6 A cadence that works
+
+| When | Do this |
+|---|---|
+| Before you write anything | *"What do we know about X, and where are we thin?"* |
+| Before you decide anything | *"What would change my mind about X?"* |
+| After reading something good | Ingest it while it's fresh — the discuss step needs your reaction |
+| Weekly, or when stuck | *"lint the wiki"* — then go find what it says is missing |
+| After any good answer | *"file that"* |
+| End of a session | *"commit"* |
+
+### 17.7 The honest test
+
+After 20 sources in one domain, ask it something you genuinely don't know the answer to
+and would otherwise have to research for an hour.
+
+If the answer saves you that hour and you'd defend it to someone else — it's working.
+If it reads like a competent summary you could have gotten anywhere — the wiki is too
+thin, too scattered, or you're asking recall questions. All three are fixable, and §17.1
+is where to start.
+
+---
+
+## 18. When not to use it
 
 - One-off lookups you'll never revisit — just ask, don't ingest
 - Breaking news with no lasting relevance
@@ -525,7 +633,7 @@ Ingest costs real minutes. Not everything deserves filing.
 
 ---
 
-## 18. How this fails
+## 19. How this fails
 
 **Scattering.** Five sources across five unrelated topics produces a nice-looking folder
 that does nothing. Compounding needs density — sources that touch each other. Fifteen
@@ -545,7 +653,7 @@ say so and it gets removed.
 
 ---
 
-## 19. Getting to critical mass
+## 20. Getting to critical mass
 
 Pick **one** domain and go deep. Not two.
 
@@ -560,7 +668,7 @@ Pick **one** domain and go deep. Not two.
 
 ---
 
-## 20. Open bets
+## 21. Open bets
 
 Three things being tracked, each a page tagged `watching`:
 
@@ -577,7 +685,7 @@ degrades as the wiki grows, this reverts to an ordinary abandoned wiki.
 
 ---
 
-## 21. Quick reference
+## 22. Quick reference
 
 ```
 Drop a file        raw/inbox/  →  say "ingest this"
