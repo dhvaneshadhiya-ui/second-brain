@@ -61,7 +61,7 @@ already been revised six times; that's the system working, not churn.
 ## 4. Where everything lives
 
 ```
-Second Brain/                  <- Claude opens this (repo root)
+second-brain/                  <- Claude opens this (repo root)
 ├── CLAUDE.md                  the schema — how the agent behaves
 ├── MANUAL.md                  this file
 ├── README.md                  short intro, setup on a new machine
@@ -80,8 +80,9 @@ Second Brain/                  <- Claude opens this (repo root)
     └── questions/             open threads being tracked over time
 ```
 
-Two folders named `Second Brain` is confusing. The **outer** is the git repo — Claude
-opens that. The **inner** is the Obsidian vault — Obsidian opens that.
+The **outer** folder (`second-brain`) is the git repo — Claude opens that. The **inner**
+folder (`Second Brain`) is the Obsidian vault — Obsidian opens that. Renamed 2026-08-18
+because two identically-named nested folders was a trap.
 
 ---
 
@@ -248,8 +249,8 @@ agent did to your wiki, in a form you can reject.
 ## 13. Two machines
 
 ```bash
-git clone https://github.com/dhvaneshadhiya-ui/second-brain.git "Second Brain"
-cd "Second Brain"
+git clone https://github.com/dhvaneshadhiya-ui/second-brain.git
+cd second-brain
 ./setup.sh
 ```
 

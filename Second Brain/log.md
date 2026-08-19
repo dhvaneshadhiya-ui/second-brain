@@ -140,3 +140,13 @@ how it fails, and how to reach critical mass. `README.md` now points at it first
 
 Canonical copy is `MANUAL.md`; a formatted web version was published as an artifact for
 reading. If the manual changes, regenerate the artifact from the markdown.
+
+## [2026-08-18] refactor | Renamed repo folder to second-brain
+
+Outer folder `Second Brain/` -> `second-brain/`. Two identically-named nested folders made
+it ambiguous which one to open in which app; now the repo is `second-brain` and the vault
+inside it keeps `Second Brain`.
+
+Updated `README.md` and `MANUAL.md` path references, and re-ran `setup.sh` to regenerate
+`~/.claude/CLAUDE.md` with the new path (old one backed up). Git remote unaffected.
+Obsidian saved vault entry points at the old path and must be re-selected once.

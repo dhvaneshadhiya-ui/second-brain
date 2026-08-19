@@ -14,10 +14,11 @@ does, and how it helps. Start there.
 query, and lint workflows. The agent reads this; you generally don't need to.
 
 ```
-CLAUDE.md              the schema — how the agent behaves
-MANUAL.md              how to use this — start here
-setup.sh               one-time setup on a new machine
-Second Brain/          the Obsidian vault
+second-brain/          <- Claude opens this (repo root)
+├── CLAUDE.md          the schema — how the agent behaves
+├── MANUAL.md          how to use this — start here
+├── setup.sh           one-time setup on a new machine
+└── Second Brain/      <- Obsidian opens this (the vault)
 ├── index.md           catalog, by domain then category
 ├── log.md             append-only activity record
 ├── raw/inbox/         drop sources here — the only folder you touch
@@ -28,14 +29,14 @@ Second Brain/          the Obsidian vault
 ## Set up on a new machine
 
 ```bash
-git clone https://github.com/dhvaneshadhiya-ui/second-brain.git "Second Brain"
-cd "Second Brain"
+git clone https://github.com/dhvaneshadhiya-ui/second-brain.git
+cd second-brain
 ./setup.sh
 ```
 
 `setup.sh` writes `~/.claude/CLAUDE.md` with the correct local path, so every Claude Code
-session on that machine knows the vault exists. Then open `Second Brain/Second Brain/` as
-a vault in Obsidian, and start Claude Code from the repo root.
+session on that machine knows the vault exists. Then open the inner `Second Brain/` folder
+as a vault in Obsidian, and open `second-brain/` in Claude.
 
 ## Daily use
 
