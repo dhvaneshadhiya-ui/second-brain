@@ -121,3 +121,12 @@ forever is noise. Lint should propose merging domains that never grew.
 Wrote `~/.claude/CLAUDE.md` — a 17-line pointer so every Claude Code session on this Mac
 knows the vault exists, reads its schema before touching it, queries via `index.md`,
 refuses to ingest from other directories, and never copies `personal` content out.
+
+## [2026-08-18] setup | Private remote; privacy scope decided
+
+Pushed to the private repo `dhvaneshadhiya-ui/second-brain` — backup, history, and
+cross-machine clone. Local git history begins at commit `a30ff23`.
+
+Human chose to include `personal` content in the remote rather than gitignoring it.
+`CLAUDE.md` §2.5 privacy updated: the vault and that one remote are in scope; everywhere
+else requires asking. Individual sources can still be excluded on request.

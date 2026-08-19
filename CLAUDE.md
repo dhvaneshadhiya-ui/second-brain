@@ -109,9 +109,18 @@ connection is substantive enough to need explaining rather than just labelling, 
 when it earns its own `syntheses/` page carrying both domains.
 
 ### Privacy
-`personal` pages may hold sensitive material. This repo is local and private. Do not
-publish, share, or send `personal` content anywhere outside it without being asked, and
-flag it if a request would do so incidentally.
+`personal` pages may hold sensitive material.
+
+**Decided 2026-08-18:** the whole vault, `personal` included, is backed up to the private
+repo `dhvaneshadhiya-ui/second-brain`. That remote is in scope and needs no confirmation.
+
+**Everywhere else is out of scope.** Do not publish, share, paste, or send `personal`
+content anywhere beyond the vault and that remote without being asked — no artifacts, no
+external services, no other repos, no summaries into unrelated outputs. Flag it if a
+request would do so incidentally rather than silently complying.
+
+If the human says a specific source should not leave this disk, gitignore that file and
+its wiki pages, and note it here.
 
 ---
 
