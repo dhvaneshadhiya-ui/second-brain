@@ -281,20 +281,22 @@ inner folder in Obsidian and the outer folder in Claude, same as before.
 
 ### Updating a computer that already has it
 
-```bash
-cd second-brain && git pull && ./setup.sh
-```
+Open the `second-brain` folder in Claude and say:
 
-The first part brings down new pages, schema changes, and the manual. The second part
-matters because the pointer file that tells Claude where the system lives is not inside the
-project. It sits at `~/.claude/CLAUDE.md` and holds that computer's own file path, so every
-machine needs a different one and it cannot be shared through the project. When its contents
-change, pulling will not touch it, and that computer carries on following an old rule.
-Running setup again fixes it and is safe to run any time.
+> update my second brain
 
-If you did work on that computer and never saved it, the pull will complain. Save it there
-first, then pull. Nothing is lost either way, because git refuses to let one computer
-overwrite the other.
+That is all you do. Claude fetches the latest version and refreshes the settings on that
+machine.
+
+The refresh step matters and it is easy to miss if you ever do this by hand. The small file
+that tells Claude where your second brain lives sits outside the project, because it holds a
+file path unique to each computer. New versions never reach it automatically. Without the
+refresh, that machine keeps following instructions that were changed somewhere else, which
+is exactly what would have happened today when we removed the rule about where you can add
+sources from.
+
+If you did work on that computer and never saved it, Claude will tell you and save it first.
+Nothing gets lost. Neither computer is allowed to overwrite the other.
 
 ### Keeping them in step
 

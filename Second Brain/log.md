@@ -231,3 +231,16 @@ The second step is the one that gets missed. The pointer file lives at ~/.claude
 outside the repo, because it holds a machine-specific path. Changes to it never arrive by
 pull, so a machine can go on following a rule that was deleted, exactly as would have
 happened with the ingest restriction removed earlier today.
+
+## [2026-08-19] refactor | UPDATE workflow; docs stop assuming a terminal
+
+The human uses the desktop app on every machine and had said so, yet I had just written the
+update instructions as shell commands for them to type. Same error as the domain folders:
+moving work onto their side that belongs on mine.
+
+Added §4.5 UPDATE to CLAUDE.md so any session on any machine knows what "update my second
+brain" means: pull, then always re-run setup.sh even when the pull looked empty, because the
+pointer file lives outside the repo and never arrives by pull. Commit their local work first
+rather than discarding it to make a pull succeed.
+
+MANUAL and README rewritten to say what to ask for instead of what to type.

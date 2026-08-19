@@ -278,6 +278,22 @@ it and state your reasoning in step 2 so they can correct it in one word.
 
 A single source commonly touches 8–15 pages. That is normal and expected.
 
+## 4.5 Workflow: UPDATE
+
+Trigger: "update my second brain", "pull the latest", "get the newest version", or opening
+a session on a machine that has been idle for a while.
+
+The human does not run commands. Run these and report what changed:
+
+1. `git pull` in the repo root. If it refuses because of local work, commit that first,
+   then pull. Never discard their work to make a pull succeed.
+2. `./setup.sh` — **always, even when the pull changed nothing visible.** It regenerates
+   `~/.claude/CLAUDE.md`, which lives outside the repo because it holds a machine-specific
+   path and therefore never arrives via pull. Skipping this leaves the machine following
+   schema rules that were deleted elsewhere.
+3. Report what actually changed: new pages, schema changes, anything affecting how they
+   work.
+
 ## 5. Workflow: QUERY
 
 1. Read `index.md` first to locate relevant pages, then drill into them. Grep the

@@ -40,12 +40,9 @@ as a vault in Obsidian, and open `second-brain/` in Claude.
 
 ## Update a machine that already has it
 
-```bash
-cd second-brain && git pull && ./setup.sh
-```
-
-`git pull` updates the project. `./setup.sh` refreshes `~/.claude/CLAUDE.md`, which lives
-outside the repo because it holds a machine-specific path, so it does not update on its own.
+Open this folder in Claude and say **"update my second brain"**. Claude pulls the latest and
+re-runs `setup.sh`, which refreshes `~/.claude/CLAUDE.md` — that file lives outside the repo
+because it holds a machine-specific path, so it never updates via pull.
 
 ## Daily use
 
