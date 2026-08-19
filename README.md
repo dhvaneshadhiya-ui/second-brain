@@ -38,6 +38,15 @@ cd second-brain
 session on that machine knows the vault exists. Then open the inner `Second Brain/` folder
 as a vault in Obsidian, and open `second-brain/` in Claude.
 
+## Update a machine that already has it
+
+```bash
+cd second-brain && git pull && ./setup.sh
+```
+
+`git pull` updates the project. `./setup.sh` refreshes `~/.claude/CLAUDE.md`, which lives
+outside the repo because it holds a machine-specific path, so it does not update on its own.
+
 ## Daily use
 
 | | |

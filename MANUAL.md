@@ -279,6 +279,25 @@ cd second-brain
 That last line sets up the new computer so Claude knows where everything is. Then open the
 inner folder in Obsidian and the outer folder in Claude, same as before.
 
+### Updating a computer that already has it
+
+```bash
+cd second-brain && git pull && ./setup.sh
+```
+
+The first part brings down new pages, schema changes, and the manual. The second part
+matters because the pointer file that tells Claude where the system lives is not inside the
+project. It sits at `~/.claude/CLAUDE.md` and holds that computer's own file path, so every
+machine needs a different one and it cannot be shared through the project. When its contents
+change, pulling will not touch it, and that computer carries on following an old rule.
+Running setup again fixes it and is safe to run any time.
+
+If you did work on that computer and never saved it, the pull will complain. Save it there
+first, then pull. Nothing is lost either way, because git refuses to let one computer
+overwrite the other.
+
+### Keeping them in step
+
 One thing to remember: the copies do not sync by themselves. Say "commit" when you finish
 on one computer, and ask for the latest before you start on the other. If you want your
 notes to appear on your phone automatically, Obsidian has its own sync service for that,

@@ -221,3 +221,13 @@ markdown when the ingest rule changed and forgot the web copy. Synced.
 
 The inbox README still had the old dash-heavy wording from before the plain-language
 rewrite. Redone to match.
+
+## [2026-08-19] refactor | Documented how to update an existing install
+
+Gap found by the human asking how to update the second machine. Neither README nor MANUAL
+said, and the answer is not obvious: git pull, then run setup.sh again.
+
+The second step is the one that gets missed. The pointer file lives at ~/.claude/CLAUDE.md,
+outside the repo, because it holds a machine-specific path. Changes to it never arrive by
+pull, so a machine can go on following a rule that was deleted, exactly as would have
+happened with the ingest restriction removed earlier today.
