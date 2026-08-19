@@ -130,3 +130,13 @@ cross-machine clone. Local git history begins at commit `a30ff23`.
 Human chose to include `personal` content in the remote rather than gitignoring it.
 `CLAUDE.md` §2.5 privacy updated: the vault and that one remote are in scope; everywhere
 else requires asking. Individual sources can still be excluded on request.
+
+## [2026-08-18] refactor | Manual written
+
+Added `MANUAL.md` at the repo root — the human-facing companion to `CLAUDE.md`: what each
+part does, who owns what, the five page types, domains, tags, the operations, an ingest
+walked step by step, Obsidian, git, multi-machine setup, how it helps, when not to use it,
+how it fails, and how to reach critical mass. `README.md` now points at it first.
+
+Canonical copy is `MANUAL.md`; a formatted web version was published as an artifact for
+reading. If the manual changes, regenerate the artifact from the markdown.

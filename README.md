@@ -7,11 +7,15 @@ Raw sources are immutable. The agent owns the wiki layer — reading sources, wr
 revising pages, cross-referencing, flagging contradictions, and keeping the index and log
 current. The human curates sources, asks questions, and directs emphasis.
 
+**`MANUAL.md` explains how to use it** — what each part does, what you do, what the agent
+does, and how it helps. Start there.
+
 **`CLAUDE.md` is the schema** — page formats, domains, tag vocabulary, and the ingest,
-query, and lint workflows. Read it before touching the wiki.
+query, and lint workflows. The agent reads this; you generally don't need to.
 
 ```
-CLAUDE.md              the schema and operating manual
+CLAUDE.md              the schema — how the agent behaves
+MANUAL.md              how to use this — start here
 setup.sh               one-time setup on a new machine
 Second Brain/          the Obsidian vault
 ├── index.md           catalog, by domain then category
