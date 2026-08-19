@@ -186,3 +186,18 @@ prose, and used plain verbs. Git commands kept but paired with the plain-English
 that also works ("what changed last session?", "undo that").
 
 No facts changed. Artifact rebuilt from the same prose.
+
+## [2026-08-19] refactor | Ingest is allowed from any directory
+
+Removed the rule blocking ingest from outside the vault. It was my restriction, not a
+technical limit, and it was the same mistake as the domain folders and the topical tags:
+structure that looks tidy and costs the human something.
+
+Replaced with a rule about doing the job properly rather than about location. Read the
+schema first, copy the source into raw/, run the full workflow including the pause where
+the human steers, update index and log. Never an abbreviated version. Added a second rule
+that a real ingest costs 10 to 20 minutes of attention, so if the human is mid-task the
+agent should say so and offer to park the file in raw/inbox for later.
+
+Edited setup.sh so new machines get the same wording, regenerated the local pointer, and
+updated the table in MANUAL.md section 13.

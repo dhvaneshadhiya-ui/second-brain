@@ -25,9 +25,13 @@ An LLM-maintained knowledge wiki lives at \`$REPO\`.
 - **To query it:** start with the vault's \`index.md\` to locate pages, then drill in.
   Answer with citations to specific pages, and say plainly where the wiki is silent
   rather than filling gaps from general knowledge.
-- **Do not ingest sources or write wiki pages from another directory.** Ingest is a
-  supervised workflow that belongs in a session opened at that path. If the user wants to
-  ingest something from elsewhere, tell them to open a session there.
+- **Ingesting from another directory is fine.** Do it properly: read the vault's
+  \`CLAUDE.md\` first, copy the source into \`raw/\`, run the full ingest workflow including
+  the pause where the human steers, and update \`index.md\` and \`log.md\` in the same pass.
+  Never do an abbreviated version.
+- **A real ingest costs the human 10 to 20 minutes of attention.** If they are clearly
+  mid-task on something else, say so and offer to drop the file in \`raw/inbox/\` for later
+  instead of pulling them out of what they were doing.
 - **Never copy \`personal\`-domain content out of the vault**, or into any outward-facing
   output, without being asked.
 

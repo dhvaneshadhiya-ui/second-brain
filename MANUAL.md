@@ -284,13 +284,18 @@ on one computer, and ask for the latest before you start on the other. If you wa
 notes to appear on your phone automatically, Obsidian has its own sync service for that,
 and the two work fine together.
 
-| Where | Can read it | Can change it |
+| Where | Can read it | Can add to it |
 |---|---|---|
-| Claude desktop app | yes | yes |
+| Claude, in the second brain folder | yes | yes |
+| Claude, in any other folder on this computer | yes | yes |
 | Obsidian on any device | yes | no |
 | claude.ai in a browser or on your phone | no | no |
 
-So: feed it and question it from the desktop app, read it anywhere through Obsidian.
+You can ask it things from any folder on your computer, and you can feed it from anywhere
+too. If you find something good while working on an unrelated project, say "ingest this"
+and it will do the whole job properly rather than a rushed version. It should also warn you
+that a real one takes ten or twenty minutes and offer to park the file for later if you are
+in the middle of something.
 
 ---
 
