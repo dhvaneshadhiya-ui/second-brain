@@ -122,7 +122,7 @@ Wrote `~/.claude/CLAUDE.md` — a 17-line pointer so every Claude Code session o
 knows the vault exists, reads its schema before touching it, queries via `index.md`,
 refuses to ingest from other directories, and never copies `personal` content out.
 
-## [2026-08-18] setup | Private remote; privacy scope decided
+## [2026-08-19] setup | Private remote; privacy scope decided
 
 Pushed to the private repo `dhvaneshadhiya-ui/second-brain` — backup, history, and
 cross-machine clone. Local git history begins at commit `a30ff23`.
@@ -131,7 +131,7 @@ Human chose to include `personal` content in the remote rather than gitignoring 
 `CLAUDE.md` §2.5 privacy updated: the vault and that one remote are in scope; everywhere
 else requires asking. Individual sources can still be excluded on request.
 
-## [2026-08-18] refactor | Manual written
+## [2026-08-19] refactor | Manual written
 
 Added `MANUAL.md` at the repo root — the human-facing companion to `CLAUDE.md`: what each
 part does, who owns what, the five page types, domains, tags, the operations, an ingest
@@ -141,7 +141,7 @@ how it fails, and how to reach critical mass. `README.md` now points at it first
 Canonical copy is `MANUAL.md`; a formatted web version was published as an artifact for
 reading. If the manual changes, regenerate the artifact from the markdown.
 
-## [2026-08-18] refactor | Renamed repo folder to second-brain
+## [2026-08-19] refactor | Renamed repo folder to second-brain
 
 Outer folder `Second Brain/` -> `second-brain/`. Two identically-named nested folders made
 it ambiguous which one to open in which app; now the repo is `second-brain` and the vault
@@ -151,7 +151,7 @@ Updated `README.md` and `MANUAL.md` path references, and re-ran `setup.sh` to re
 `~/.claude/CLAUDE.md` with the new path (old one backed up). Git remote unaffected.
 Obsidian saved vault entry points at the old path and must be re-selected once.
 
-## [2026-08-18] refactor | Manual expanded with use cases and examples
+## [2026-08-19] refactor | Manual expanded with use cases and examples
 
 Added two sections to `MANUAL.md`: §15 Use cases (tracking a beat, competitive/SEO
 intelligence, deep dives, personal, client projects, reading a book -- each showing the
@@ -160,7 +160,7 @@ page structure that emerges and the question it makes cheap) and §16 Worked exa
 exchanges, and what a recorded contradiction looks like). Renumbered 17-21. Artifact
 regenerated.
 
-## [2026-08-18] refactor | Manual: added §17 Leverage
+## [2026-08-19] refactor | Manual: added §17 Leverage
 
 Human pointed out that use cases and examples describe what the wiki becomes and what it
 looks like, but not how to extract value from it. Correct -- both sections documented the
@@ -173,7 +173,7 @@ position in as a citable source; turning wiki output into work product with its 
 trail intact; letting lint direct what you read next; filing query answers back; a cadence;
 and an honest test at 20 sources. Renumbered 18-22.
 
-## [2026-08-18] refactor | Manual rewritten in plain language
+## [2026-08-19] refactor | Manual rewritten in plain language
 
 Human asked for documentation a non-technical reader can follow, and for it to stop
 reading like AI output. Rewrote all of MANUAL.md using the humanizer skill.
@@ -201,3 +201,23 @@ agent should say so and offer to park the file in raw/inbox for later.
 
 Edited setup.sh so new machines get the same wording, regenerated the local pointer, and
 updated the table in MANUAL.md section 13.
+
+## [2026-08-19] lint | Housekeeping pass
+
+Asked whether anything needed improving, so I checked rather than guessed. Four real
+problems, all mine.
+
+Dates were wrong. This session ran from the evening of the 18th into the morning of the
+19th, and I kept stamping 2026-08-18 on everything. Checked file times and commit times to
+work out the real boundary. Six log entries corrected from the 18th to the 19th, and
+index.md updated field fixed. Entries for the initial setup and the two ingests genuinely
+were the 18th and are unchanged. Correcting a wrong date is not rewriting history, but
+recording it here so the change is visible.
+
+MANUAL.md section 13 and the published version had drifted apart, because I edited the
+markdown when the ingest rule changed and forgot the web copy. Synced.
+
+.gitignore had .DS_Store listed twice. Deduplicated.
+
+The inbox README still had the old dash-heavy wording from before the plain-language
+rewrite. Redone to match.
