@@ -172,3 +172,17 @@ questions any chatbot answers better); feeding adversarially, including dropping
 position in as a citable source; turning wiki output into work product with its citation
 trail intact; letting lint direct what you read next; filing query answers back; a cadence;
 and an honest test at 20 sources. Renumbered 18-22.
+
+## [2026-08-18] refactor | Manual rewritten in plain language
+
+Human asked for documentation a non-technical reader can follow, and for it to stop
+reading like AI output. Rewrote all of MANUAL.md using the humanizer skill.
+
+Jargon now explained on first use or replaced: frontmatter became "a few lines of
+information about itself", propagate became "goes through every related page", lint is
+introduced as a health check, repo became "the project folder". Removed every em and en
+dash, cut most bold, switched headings to sentence case, replaced bold-label lists with
+prose, and used plain verbs. Git commands kept but paired with the plain-English phrasing
+that also works ("what changed last session?", "undo that").
+
+No facts changed. Artifact rebuilt from the same prose.
